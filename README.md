@@ -1,8 +1,10 @@
 # CompositePattern
 Composite Design Pattern Sample
 
-Employee (Leaf)
-TeamLeader (Manager)
-DepartmentHead(Manager of Employee and Teamleader)
+The Composite Pattern has 4 participants
 
-They all have the unified "Operation" GetDate()
+1. Component: EmployeeBass declare the default behavior (GetDate()) common to all objects in the composition
+2. Leaf : Employee - defined behavior for primitive objects in the composition
+3. Composite : TeamLead / DepartmentHead - Stores child components and implements child related opeartion (GetDate()) in the component interface
+4. Client: - Main()
+
