@@ -20,6 +20,7 @@ namespace CompositePattern
 
     public class Employee : EmployeeBase
     {
+        /* Private constructor force the class to be created using EmployeeFactory  */
         public Employee(string Name) : base(Name) { }
 
         public override void GetData()

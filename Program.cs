@@ -6,9 +6,11 @@ namespace CompositePattern
     {
         static void Main(string[] args)
         {
-            Employee A1 = new Employee("Teammember A1");
+            Employee developer1 = EmployeeFactory.Instance.CreateEmployee("Developer D1");
+            developer1.GetData();
+            Employee A1 = EmployeeFactory.Instance.CreateEmployee("Teammember A1");
             A1.GetData();
-            Employee A2 = new Employee("Teammember A2");
+            Employee A2 = EmployeeFactory.Instance.CreateEmployee("Teammember A2");
             A2.GetData();
             Console.WriteLine("------------------------------");
 
@@ -18,17 +20,17 @@ namespace CompositePattern
             TeamLeadA.GetData();
             Console.WriteLine("------------------------------");
 
-            Employee B1 = new Employee("Developer B1");
-            Employee B2 = new Employee("Developer B2");
-            Employee B3 = new Employee("Developer B3");
+            Employee B1 = EmployeeFactory.Instance.CreateEmployee("Developer B1");
+            Employee B2 = EmployeeFactory.Instance.CreateEmployee("Developer B2");
+            Employee B3 = EmployeeFactory.Instance.CreateEmployee("Developer B3");
 
-            Manager TeamLeadB= new Manager("Team B Lead");
+            Manager TeamLeadB = new Manager("Team B Lead");
             TeamLeadB.ManageMember(B1);
             TeamLeadB.ManageMember(B2);
             TeamLeadB.ManageMember(B3);
 
             Manager DepartmentHead = new Manager("Department Head");
-            Employee Secretary = new Employee("Department Secretary");
+            Employee Secretary = EmployeeFactory.Instance.CreateEmployee("Department Secretary");
 
             DepartmentHead.ManageMember(TeamLeadA);
             DepartmentHead.ManageMember(TeamLeadB);
