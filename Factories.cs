@@ -21,8 +21,10 @@ namespace CompositePattern
         {
             object[] args = { Name };
 
+            /// Parameterless
             ///return Activator.CreateInstance(Type.GetType(typeof(Employee).FullName)) as Employee;
 
+            /// obmit BindingFlags.Public can force the object to have a private constructor
             return Activator.CreateInstance(typeof(Employee),
                     BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null,
                     args, null) as Employee;
